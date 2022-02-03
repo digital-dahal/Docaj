@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# DocGuj
+
+## License
+A website for viewing local pdf online
+MIT License.
+
+You can create your own pdf viewer by forking this project under the following conditions:
+
+- Add a link to my github
+>>>>>>> a823cb921f9bf41d412ac336c6872a8238aa86d7
