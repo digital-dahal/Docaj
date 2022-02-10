@@ -6,4 +6,4 @@ MIT License.
 
 You can create your own pdf viewer by forking this project under the following conditions:
 
-- Add a link to my github
+- Add a link to my github in your application

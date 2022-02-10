@@ -1,15 +1,31 @@
 import { extendTheme } from "@chakra-ui/react";
+import "@fontsource/bebas-neue";
+const colors = {
+  primaryRed: "#DF4F4F",
+  primaryPink: "#DA19A4",
+  white: "#fff",
+  grayishBlue: "#92BEC3",
+};
 
-const component = {
-  Link: {
-    color: "#fff",
-    textDecoration: "none",
-  },
+const components = {
   Text: {
     variants: {
       gradient: {
-        bgGradient: "linear(to-l, #7928CA, #FF0080)",
+        bgGradient: `linear(to-b, ${colors.primaryRed}, ${colors.primaryPink})`,
         bgClip: "text",
+      },
+      grayish: {
+        color: colors.grayishBlue,
+        fontFamily: "Bebas Neue",
+      },
+    },
+  },
+  Button: {
+    variants: {
+      gradientOutline: {
+        fontWeight: "bold",
+        borderRadius: "md",
+        bgGradient: `linear(to-b, ${colors.primaryRed}, ${colors.primaryPink})`,
       },
     },
   },
@@ -20,7 +36,8 @@ const config = {
 };
 
 const overRide = {
-  component,
+  colors,
+  components,
   config,
 };
 const theme = extendTheme(overRide);

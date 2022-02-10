@@ -7,10 +7,11 @@ function App() {
   return (
     <Wrapper>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
     </Wrapper>
   );
 }
