@@ -21,6 +21,7 @@ export const PdfParent = styled.div`
   width: 552px;
   height: 551px;
   border: 5px dashed #92bec3;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,9 +1,15 @@
-import { Text, Button } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import { DraftParent, DraftContent } from "./Style";
-import { AnimatingText } from "../../../components";
+import { AnimatingText, FileInput } from "../../../components";
+import { useTheme } from "@chakra-ui/react";
+import { usePdf } from "../../../Wrapper";
 import "@fontsource/bebas-neue";
 import "@fontsource/roboto";
 const DraftContainer = () => {
+  const theme = useTheme();
+  const { onLoadFile } = usePdf();
+  console.log(theme.components);
+  const { primaryRed, primaryPink } = theme.colors;
   return (
     <DraftParent>
       <DraftContent>
@@ -11,6 +17,7 @@ const DraftContainer = () => {
           fontSize={"2.5rem"}
           fontFamily={"Bebas Neue"}
           letterSpacing={"0.1rem"}
+          colors={{ color1: primaryRed, color2: primaryPink }}
         >
           Pdf OnliNe Viewer
         </AnimatingText>
@@ -21,9 +28,15 @@ const DraftContainer = () => {
           rig- -ht side of your screen . We provide you the safest way so you
           can read your document without any problem.
         </Text>
-        <Button variant="gradientOutline" mt={2}w="50%">
-          Upload
-        </Button>
+        <FileInput
+          submitHandler={onLoadFile}
+          width="50%"
+          mt={"1rem"}
+          padding={"0.5rem"}
+          bGradient={{ color1: primaryRed, color2: primaryPink }}
+          gradientPosition={"to left"}
+          bRadius={"0.5rem"}
+        />
       </DraftContent>
     </DraftParent>
   );

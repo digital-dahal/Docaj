@@ -1,22 +1,50 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import theme from "./presentation/theme";
 
 // This is the context that will be used by the Wrapper component.
 // The Wrapper component will be used to wrap the App component.
+const WrapFunctionContext = createContext();
 const WrapContext = createContext();
-const AuthContext = createContext();
-export function useAuth() {
-  return useContext(AuthContext);
+export function usePdf() {
+  return useContext(WrapContext);
 }
+
 export default function Wrapper({ children }) {
+  const [file, setFile] = useState(null);
+  const [err, setErr] = useState(null);
+
+  function onLoadFile(e) {
+    const allowedFile = ["application/pdf"];
+    let currentFile = e.target.files[0];
+    if (currentFile) {
+      if (allowedFile.includes(currentFile.type)) {
+        let reader = new FileReader();
+        reader.readAsDataURL(currentFile);
+        reader.onloadend = (e) => {
+          // This is base64 code file
+          setFile(e.target.result);
+        };
+      } else {
+        setErr("Upload a PDF file");
+      }
+    } else {
+      setErr("Upload a Image ");
+    }
+  }
   return (
     <BrowserRouter>
       <ChakraProvider theme={theme}>
-        <AuthContext.Provider value={{}}>
-          <WrapContext.Provider value={""}>{children}</WrapContext.Provider>
-        </AuthContext.Provider>
+        <WrapContext.Provider
+          value={{
+            onLoadFile,
+            file,
+            err,
+          }}
+        >
+          {children}
+        </WrapContext.Provider>
       </ChakraProvider>
     </BrowserRouter>
   );

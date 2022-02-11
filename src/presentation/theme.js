@@ -20,9 +20,10 @@ const components = {
       },
     },
   },
+
   Button: {
     variants: {
-      gradientOutline: {
+      gradient: {
         fontWeight: "bold",
         borderRadius: "md",
         bgGradient: `linear(to-b, ${colors.primaryRed}, ${colors.primaryPink})`,

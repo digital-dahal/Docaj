@@ -18,13 +18,16 @@ const chageColor = keyframes`
         background-position:100% 0%;
     }
     `;
+
 const AnimatingText = styled.p`
   transform: scale(0.9) translateZ(0);
   filter: blur(0.5px);
   font-family: ${(props) => props.fontFamily ?? "Roboto"};
   font-weight: bold;
   font-size: ${(props) => props.fontSize ?? "1rem"};
-  background: linear-gradient(to bottom, #df4f4f, #da19a4, #df4f4f, #da19a4);
+  background: ${(props) =>
+    `linear-gradient(to bottom,${props.colors.color1} ,${props.colors.color2},${props.colors.color1} ,${props.colors.color2} )
+    `};
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-size: 200% 200%;
