@@ -16,6 +16,8 @@ export default function Wrapper({ children }) {
   const [err, setErr] = useState(null);
 
   function onLoadFile(e) {
+    setFile(null);
+    setErr(null);
     const allowedFile = ["application/pdf"];
     let currentFile = e.target.files[0];
     if (currentFile) {
@@ -30,7 +32,7 @@ export default function Wrapper({ children }) {
         setErr("Upload a PDF file");
       }
     } else {
-      setErr("Upload a Image ");
+      setErr("Upload To Get Started ");
     }
   }
   return (

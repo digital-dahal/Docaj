@@ -7,11 +7,10 @@ import { Worker } from "@react-pdf-viewer/core";
 import { Viewer } from "@react-pdf-viewer/core";
 
 function PdfViewer() {
-  const { file ,err} = usePdf();
-  console.log(file)
+  const { file, err } = usePdf();
   return (
     <PdfParent>
-      {!file && (
+      {!file && err == null && (
         <>
           <Image src={FileImage} w="80%" mb={4} />
           <Text variant="grayish" fontSize="3rem">
@@ -26,7 +25,13 @@ function PdfViewer() {
           </Worker>
         </>
       )}
-      {/* {err!=null && } */}
+      {err != null && (
+        <>
+          <Text variant="err" fontSize="3rem">
+            {err}
+          </Text>
+        </>
+      )}
     </PdfParent>
   );
 }

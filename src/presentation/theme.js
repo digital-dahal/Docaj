@@ -5,6 +5,7 @@ const colors = {
   primaryPink: "#DA19A4",
   white: "#fff",
   grayishBlue: "#92BEC3",
+  errRed: "#df2424",
 };
 
 const components = {
@@ -16,6 +17,10 @@ const components = {
       },
       grayish: {
         color: colors.grayishBlue,
+        fontFamily: "Bebas Neue",
+      },
+      err: {
+        color: colors.errRed,
         fontFamily: "Bebas Neue",
       },
     },
