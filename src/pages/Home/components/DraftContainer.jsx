@@ -23,9 +23,9 @@ const DraftContainer = () => {
         </AnimatingText>
         <Text fontFamily="Roboto" w="50%" textAlign="justify">
           Doguj is online platofrm of reading Pdf in website.Just try to upload
-          Any pdf from you local file and some safe background procesiong will
+          Any pdf from you local file and some safe background processing will
           be done in order to read your pdf. Then you can view the pdf from the
-          rig- -ht side of your screen . We provide you the safest way so you
+          right side of your screen . We provide you the safest way so you
           can read your document without any problem.
         </Text>
         <FileInput
