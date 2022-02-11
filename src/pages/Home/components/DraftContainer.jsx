@@ -8,7 +8,6 @@ import "@fontsource/roboto";
 const DraftContainer = () => {
   const theme = useTheme();
   const { onLoadFile } = usePdf();
-  console.log(theme.components);
   const { primaryRed, primaryPink } = theme.colors;
   return (
     <DraftParent>
